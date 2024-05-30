@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed May 29 17:21:12 2024
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : Frequency_division
+Top-level Entity Name : Frequency_division
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 1,418 / 10,320 ( 14 % )
+    Total combinational functions : 779 / 10,320 ( 8 % )
+    Dedicated logic registers : 1,200 / 10,320 ( 12 % )
+Total registers : 1200
+Total pins : 59 / 180 ( 33 % )
+Total virtual pins : 0
+Total memory bits : 116,736 / 423,936 ( 28 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )
