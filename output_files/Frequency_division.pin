@@ -72,7 +72,7 @@ VCCIO8                       : A1        : power  :                   : 2.5V    
 CLK_250M                     : A2        : output : 2.5 V             :         : 8         : Y              
 AD9481A_data[7]              : A3        : input  : 2.5 V             :         : 8         : Y              
 AD9481A_data[3]              : A4        : input  : 2.5 V             :         : 8         : Y              
-AD9481_data_reg[6]           : A5        : output : 2.5 V             :         : 8         : N              
+AD9481_data_reg[2]           : A5        : output : 2.5 V             :         : 8         : N              
 AD9481B_data[2]              : A6        : input  : 2.5 V             :         : 8         : Y              
 AD9481B_data[6]              : A7        : input  : 2.5 V             :         : 8         : Y              
 DA_9764_outA[13]             : A8        : output : 2.5 V             :         : 8         : Y              
@@ -90,7 +90,7 @@ AD9481A_data[5]              : B3        : input  : 2.5 V             :         
 AD9481A_data[1]              : B4        : input  : 2.5 V             :         : 8         : Y              
 AD9481B_data[0]              : B5        : input  : 2.5 V             :         : 8         : Y              
 AD9481B_data[4]              : B6        : input  : 2.5 V             :         : 8         : Y              
-AD9481_data_reg[5]           : B7        : output : 2.5 V             :         : 8         : N              
+AD9481_data_reg[6]           : B7        : output : 2.5 V             :         : 8         : N              
 DA_9764_outA[11]             : B8        : output : 2.5 V             :         : 8         : Y              
 DA_9764_outA[7]              : B9        : output : 2.5 V             :         : 7         : Y              
 DA_9764_outA[3]              : B10       : output : 2.5 V             :         : 7         : Y              
@@ -99,7 +99,7 @@ DA_9764_outB[10]             : B12       : output : 2.5 V             :         
 DA_9764_outB[6]              : B13       : output : 2.5 V             :         : 7         : Y              
 DA_9764_outB[2]              : B14       : output : 2.5 V             :         : 7         : Y              
 GND                          : B15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 6         :                
+clk_out                      : B16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
 PDN                          : C3        : output : 2.5 V             :         : 8         : Y              
@@ -114,16 +114,16 @@ DA_9764_outB[13]             : C11       : output : 2.5 V             :         
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
 DA_9764_outB[5]              : C14       : output : 2.5 V             :         : 7         : Y              
-AD9481_data_reg[7]           : C15       : output : 2.5 V             :         : 6         : N              
-AD9481_data_reg[3]           : C16       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
+AD9481_data_reg[4]           : C15       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
+AD9481_data_reg[0]           : D1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
 AD9481A_data[2]              : D3        : input  : 2.5 V             :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 1         :                
 AD9481B_data[1]              : D5        : input  : 2.5 V             :         : 8         : Y              
 AD9481B_data[3]              : D6        : input  : 2.5 V             :         : 8         : Y              
 GND                          : D7        : gnd    :                   :         :           :                
-AD9481_data_reg[1]           : D8        : output : 2.5 V             :         : 8         : N              
+AD9481_data_reg[3]           : D8        : output : 2.5 V             :         : 8         : N              
 DA_9764_outA[6]              : D9        : output : 2.5 V             :         : 7         : Y              
 GND                          : D10       : gnd    :                   :         :           :                
 DA_9764_outA[0]              : D11       : output : 2.5 V             :         : 7         : Y              
@@ -137,7 +137,7 @@ GND                          : E2        : gnd    :                   :         
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 1         :                
-AD9481_data_reg[0]           : E6        : output : 2.5 V             :         : 8         : N              
+AD9481_data_reg[5]           : E6        : output : 2.5 V             :         : 8         : N              
 AD9481B_data[7]              : E7        : input  : 2.5 V             :         : 8         : Y              
 AD9481A_data[0]              : E8        : input  : 2.5 V             :         : 8         : Y              
 DA_9764_outA[8]              : E9        : output : 2.5 V             :         : 7         : Y              
@@ -162,19 +162,19 @@ DA_9764_outB[7]              : F11       : output : 2.5 V             :         
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 6         :                
-AD9481_data_reg[2]           : F15       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 6         :                
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
+AD9481_data_reg[7]           : G2        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+AD9481_data_reg[1]           : G5        : output : 2.5 V             :         : 1         : N              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
 VCCINT                       : G9        : power  :                   : 1.2V    :           :                
 VCCINT                       : G10       : power  :                   : 1.2V    :           :                
-AD9481_data_reg[4]           : G11       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 6         :                
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
@@ -196,12 +196,12 @@ MSEL0                        : H13       :        :                   :         
 CONF_DONE                    : H14       :        :                   :         : 6         :                
 GND                          : H15       : gnd    :                   :         :           :                
 GND                          : H16       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J2        :        :                   :         : 2         :                
+FIR_out[6]                   : J1        : output : 2.5 V             :         : 2         : N              
+FIR_out[7]                   : J2        : output : 2.5 V             :         : 2         : N              
 nCE                          : J3        :        :                   :         : 1         :                
 altera_reserved_tdo          : J4        : output : 2.5 V             :         : 1         : N              
 altera_reserved_tms          : J5        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 2         :                
+FIR_out[1]                   : J6        : output : 2.5 V             :         : 2         : N              
 GND                          : J7        : gnd    :                   :         :           :                
 GND                          : J8        : gnd    :                   :         :           :                
 GND                          : J9        : gnd    :                   :         :           :                
@@ -217,7 +217,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :      
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 2         :                
+FIR_out[0]                   : K6        : output : 2.5 V             :         : 2         : N              
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 4         :                
@@ -233,9 +233,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 3         :                
+FIR_out[3]                   : L6        : output : 2.5 V             :         : 2         : N              
+FIR_out[4]                   : L7        : output : 2.5 V             :         : 3         : N              
+FIR_out[5]                   : L8        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L10       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L11       :        :                   :         : 4         :                
@@ -250,7 +250,7 @@ VCCIO2                       : M3        : power  :                   : 2.5V    
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 3         :                
+FIR_out[2]                   : M7        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M9        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M10       :        :                   :         : 4         :                
@@ -300,7 +300,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R8        :        :                   :         : 3         :                
-clk_out                      : R9        : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 4         :                

@@ -6,14 +6,14 @@
 
 `timescale 1 ps / 1 ps
 module FIR (
-		input  wire        clk,              //                     clk.clk
-		input  wire        reset_n,          //                     rst.reset_n
-		input  wire [7:0]  ast_sink_data,    //   avalon_streaming_sink.data
-		input  wire        ast_sink_valid,   //                        .valid
-		input  wire [1:0]  ast_sink_error,   //                        .error
-		output wire [19:0] ast_source_data,  // avalon_streaming_source.data
-		output wire        ast_source_valid, //                        .valid
-		output wire [1:0]  ast_source_error  //                        .error
+		input  wire       clk,              //                     clk.clk
+		input  wire       reset_n,          //                     rst.reset_n
+		input  wire [7:0] ast_sink_data,    //   avalon_streaming_sink.data
+		input  wire       ast_sink_valid,   //                        .valid
+		input  wire [1:0] ast_sink_error,   //                        .error
+		output wire [7:0] ast_source_data,  // avalon_streaming_source.data
+		output wire       ast_source_valid, //                        .valid
+		output wire [1:0] ast_source_error  //                        .error
 	);
 
 	FIR_0002 fir_inst (
@@ -63,7 +63,7 @@ endmodule
 // Retrieval info: 	<generic name="inputChannelNum" value="1" />
 // Retrieval info: 	<generic name="clockRate" value="250" />
 // Retrieval info: 	<generic name="clockSlack" value="0" />
-// Retrieval info: 	<generic name="inputRate" value="100" />
+// Retrieval info: 	<generic name="inputRate" value="50" />
 // Retrieval info: 	<generic name="coeffReload" value="false" />
 // Retrieval info: 	<generic name="baseAddress" value="0" />
 // Retrieval info: 	<generic name="readWriteMode" value="read_write" />
@@ -82,7 +82,7 @@ endmodule
 // Retrieval info: 	<generic name="inputType" value="int" />
 // Retrieval info: 	<generic name="inputBitWidth" value="8" />
 // Retrieval info: 	<generic name="inputFracBitWidth" value="0" />
-// Retrieval info: 	<generic name="coeffSetRealValue" value="0.00602871206516263,0.00118829158266752,0.00129875187933317,0.00141076913326387,0.00152498452110504,0.00163825796444167,0.00175200510367929,0.00186414120416232,0.00197644564003181,0.00208455621464423,0.00219196473870309,0.00229273382856536,0.00239368504793441,0.00248988686987861,0.00257331965273341,0.00266088596118081,0.00273969548372414,0.00281170625554795,0.00287262743775727,0.00292843730328947,0.00297610745820658,0.00301779800953499,0.003048256142602,0.00307110064731974,0.00308362789880915,0.00309022248686983,0.00308362789880915,0.00307110064731974,0.003048256142602,0.00301779800953499,0.00297610745820658,0.00292843730328947,0.00287262743775727,0.00281170625554795,0.00273969548372414,0.00266088596118081,0.00257331965273341,0.00248988686987861,0.00239368504793441,0.00229273382856536,0.00219196473870309,0.00208455621464423,0.00197644564003181,0.00186414120416232,0.00175200510367929,0.00163825796444167,0.00152498452110504,0.00141076913326387,0.00129875187933317,0.00118829158266752,0.00602871206516263" />
+// Retrieval info: 	<generic name="coeffSetRealValue" value="0.028716780577655,0.00865905585956535,0.00986750996459152,0.01111500579404,0.0124022753916134,0.0137172916301196,0.0150484201717736,0.016379935041431,0.0176925565881842,0.0189764563035892,0.0202187389234877,0.0214245761049928,0.0225658080403289,0.0236262212398548,0.0245919124344487,0.0254633837620555,0.0262579054437693,0.0268932212323197,0.0274433708267437,0.0278487251498076,0.0281217494866755,0.028257441761772,0.028257441761772,0.0281217494866755,0.0278487251498076,0.0274433708267437,0.0268932212323197,0.0262579054437693,0.0254633837620555,0.0245919124344487,0.0236262212398548,0.0225658080403289,0.0214245761049928,0.0202187389234877,0.0189764563035892,0.0176925565881842,0.016379935041431,0.0150484201717736,0.0137172916301196,0.0124022753916134,0.01111500579404,0.00986750996459152,0.00865905585956535,0.028716780577655" />
 // Retrieval info: 	<generic name="coeffSetRealValueImag" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
 // Retrieval info: 	<generic name="coeffScaling" value="auto" />
 // Retrieval info: 	<generic name="coeffType" value="int" />
@@ -92,9 +92,9 @@ endmodule
 // Retrieval info: 	<generic name="karatsuba" value="false" />
 // Retrieval info: 	<generic name="outType" value="int" />
 // Retrieval info: 	<generic name="outMSBRound" value="trunc" />
-// Retrieval info: 	<generic name="outMsbBitRem" value="0" />
+// Retrieval info: 	<generic name="outMsbBitRem" value="3" />
 // Retrieval info: 	<generic name="outLSBRound" value="trunc" />
-// Retrieval info: 	<generic name="outLsbBitRem" value="10" />
+// Retrieval info: 	<generic name="outLsbBitRem" value="19" />
 // Retrieval info: 	<generic name="bankCount" value="1" />
 // Retrieval info: 	<generic name="bankDisplay" value="0" />
 // Retrieval info: </instance>

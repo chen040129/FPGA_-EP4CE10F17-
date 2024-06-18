@@ -27,7 +27,7 @@ entity FIR_tb is
     constant PHYSCHANIN_c             : natural := 1;
     constant PHYSCHANOUT_c            : natural := 1;
     constant INWIDTH_c                : natural := 8;
-    constant OUTWIDTH_c               : natural := 20;
+    constant OUTWIDTH_c               : natural := 8;
     constant BANKINWIDTH_c            : natural := 0;
     constant BANKCOUNT_c              : natural := 1;
     constant DATA_WIDTH_c             : natural := (INWIDTH_c+BANKINWIDTH_c) * PHYSCHANIN_c;
@@ -36,14 +36,14 @@ entity FIR_tb is
     constant CHANSPERPHYIN_c          : natural := 1;
     constant CHANSPERPHYOUT_c         : natural := 1;
     constant LOG2_CHANSPERPHYOUT_c    : natural := 0;
-    constant TDM_FACTOR_c             : natural := 3;
+    constant TDM_FACTOR_c             : natural := 5;
     constant INVERSE_TDM_FACTOR_c     : natural := 1;
-    constant INVALID_CYCLES_c         : natural := 2;
+    constant INVALID_CYCLES_c         : natural := 4;
     constant INTERP_FACTOR_c          : natural := 1;
     constant TOTAL_INCHANS_ALLOWED    : natural := PHYSCHANIN_c * CHANSPERPHYIN_c;
     constant TOTAL_OUTCHANS_ALLOWED   : natural := PHYSCHANOUT_c * CHANSPERPHYOUT_c;
-    constant NUM_OF_TAPS_c            : natural := 51;
-    constant TOTAL_EFF_COEF_c         : natural := 51;
+    constant NUM_OF_TAPS_c            : natural := 44;
+    constant TOTAL_EFF_COEF_c         : natural := 44;
     constant COEFF_BIT_WIDTH_c        : natural := 16;
     constant COEFF_BUS_DATA_WIDTH_c   : natural := 16;
     constant COEFF_BUS_ADDR_WIDTH   : natural := 6;
@@ -460,7 +460,7 @@ begin  -- process resetgen
     reset_design <= '1';
 
 
-    wait for tclk*51*2;
+    wait for tclk*44*2;
     reset_design <= '1';
     wait;
 end process reset_design_gen;

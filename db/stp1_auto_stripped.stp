@@ -1,4 +1,4 @@
-<session jtag_chain="Disabled" jtag_device="" sof_file="">
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: 10CL006(Y|Z)/10CL010(Y|Z)/.. (0x020F10DD)" sof_file="">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
@@ -430,14 +430,14 @@
     </signal_set>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="470"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
       <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="129024"/>
+      <single attribute="zoom offset numerator" value="64512"/>
       <multi attribute="timebars" size="1" value="910"/>
     </position_info>
   </instance>

@@ -10,7 +10,8 @@ module Frequency_division(
 	output reg [13:0] DA_9764_outB,
 	output DA_CLKA,
 	output DA_CLKB,
-	output clk_out
+	output clk_out,
+	output[7:0] FIR_out
 );
 
 
@@ -18,6 +19,9 @@ module Frequency_division(
 wire [7:0]AD9481_data;
 wire CLK_125M;
 reg [13:0] DA_OUT;
+
+wire CLK_50M;
+wire FIR_vaild;
 
 CLK AD_DA(
 	.inclk0 (CLK),
@@ -30,7 +34,11 @@ clk(
 	.clk		(AD9481_data_reg[7]),
 	.clk_out	(clk_out),
 );
-
+Effective_bit(
+	.rst		(RST_n),
+	.clk		(CLK_250M),
+	.clk_out	(CLK_50M)
+);
 
 always @(posedge CLK_250M)begin//读取AD9481的数据
 	if(!RST_n)
@@ -41,10 +49,9 @@ always @(posedge CLK_250M)begin//读取AD9481的数据
 	else
 	begin
 		PDN<=1'b0;
-		AD9481_data_reg[7:0]<=AD9481A_data[7:0];
+		AD9481_data_reg[7:0]<=AD9481A_data[7:0]-127;
 	end
 end
-
 
 
 always @(posedge CLK_125M)begin//DA9764输出
@@ -55,23 +62,14 @@ always @(posedge CLK_125M)begin//DA9764输出
 	end
 	else
 	begin
+	if(FIR_vaild)begin
+		DA_9764_outA[13:6]<=~(FIR_out[7:0]+127);
+	end
 		DA_9764_outB[13]<=~clk_out;
 	end
 end
 
 
-	FIR_0002 fir_inst (
-		.clk              (CLK_250M),              //                     clk.clk
-		.reset_n          (RST_n),          //                     rst.reset_n
-		.ast_sink_data    (ast_sink_data),    //   avalon_streaming_sink.data
-		.ast_sink_valid   (ast_sink_valid),   //                        .valid
-		.ast_sink_error   (ast_sink_error),   //                        .error
-		.ast_source_data  (ast_source_data),  // avalon_streaming_source.data
-		.ast_source_valid (ast_source_valid), //                        .valid
-		.ast_source_error (ast_source_error)  //                        .error
-	);
-
 assign DA_CLKA=CLK_125M;
 assign DA_CLKB=CLK_125M;
-
 endmodule

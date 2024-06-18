@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed May 29 17:21:05 2024
+Analysis & Synthesis Status : Successful - Sat Jun 01 17:39:55 2024
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : Frequency_division
 Top-level Entity Name : Frequency_division
 Family : Cyclone IV E
-Total logic elements : 1,496
-    Total combinational functions : 777
-    Dedicated logic registers : 1,200
-Total registers : 1200
-Total pins : 59
+Total logic elements : 3,599
+    Total combinational functions : 1,198
+    Dedicated logic registers : 3,247
+Total registers : 3247
+Total pins : 67
 Total virtual pins : 0
-Total memory bits : 116,736
-Embedded Multiplier 9-bit elements : 0
+Total memory bits : 116,776
+Embedded Multiplier 9-bit elements : 18
 Total PLLs : 1
