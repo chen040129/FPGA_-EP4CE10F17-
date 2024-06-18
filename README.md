@@ -1,4 +1,4 @@
-# 采用FPGA EPACE10F17的方波20分频器
+# 基于FPGA EPACE10F17的方波分频器
 
 本项目github地址：[chen040129/FPGA_-EP4CE10F17-: 采用FPGA EPACE10F17的方波20分频器，最大能为50MHZ的方波分频 (github.com)](https://github.com/chen040129/FPGA_-EP4CE10F17-)
 
